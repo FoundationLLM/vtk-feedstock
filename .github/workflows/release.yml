@@ -46,7 +46,7 @@ jobs:
       - uses: mamba-org/setup-micromamba@v1
         with:
           generate-run-shell: true
-          environment-file: conda-recipe/conda-lock.yml
+          environment-file: recipe/conda-lock.yml
           environment-name: conda-build
           cache-environment: true
 
