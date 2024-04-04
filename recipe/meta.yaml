@@ -1,5 +1,5 @@
-{% set version = "9.2.6" %}
-{% set build = 20 %}
+{% set version = "9.3.0" %}
+{% set build = 0 %}
 
 {% set minor_version = ".".join(version.split(".")[:2]) %}
 
@@ -21,7 +21,7 @@ package:
 
 source:
   url: http://www.vtk.org/files/release/{{ minor_version }}/VTK-{{ version }}.tar.gz
-  sha256: 06fc8d49c4e56f498c40fcb38a563ed8d4ec31358d0101e8988f0bb4d539dd12
+  sha256: fdc7b9295225b34e4fdddc49cd06e66e94260cb00efee456e0f66568c9681be9
   patches:
     - fix-threads-windows.patch  # [win]
     # https://github.com/conda-forge/vtk-feedstock/pull/282
@@ -71,8 +71,6 @@ outputs:
         - python
         - zlib
         - freetype
-        - hdf5
-        - hdf5 * nompi_*
         - libxml2
         - libpng
         - libjpeg-turbo
@@ -82,8 +80,6 @@ outputs:
         - tbb
         - tbb-devel
         - mesalib >=21.0  # [build_variant == "osmesa"]
-        - libnetcdf
-        - libnetcdf * nompi_*
         - lz4-c
         - xorg-libxt  # [linux]
         # These packages are not CDT to help with compat with other builds
@@ -102,19 +98,14 @@ outputs:
         - xorg-xf86vidmodeproto  # [linux and build_variant != "osmesa"]
         - libboost-headers
         - tk  # [not win and (build_variant == "qt")]
-        - ffmpeg
         - utfcpp
         - eigen
         - double-conversion
         - pugixml
         - glew  # [build_variant == "qt"]
-        - libogg
-        - libtheora
         - nlohmann_json
         - proj
         - loguru
-        - sqlite
-        - gl2ps
         - pugixml
         - qt-main  # [not ppc64le and (build_variant == "qt")]
 
@@ -122,7 +113,6 @@ outputs:
         - python
         - zlib
         - freetype
-        - hdf5
         - libxml2
         - libpng
         - libjpeg-turbo
@@ -131,7 +121,6 @@ outputs:
         - expat
         - tbb
         - mesalib >=21.0  # [build_variant == "osmesa"]
-        - libnetcdf
         - lz4-c
         - xorg-libxt  # [linux]
         - tk  # [not win and (build_variant == "qt")]
@@ -140,17 +129,12 @@ outputs:
         - double-conversion
         - pugixml
         - glew  # [build_variant == "qt"]
-        - libogg
-        - libtheora
         - nlohmann_json
         - proj
         - loguru
-        - sqlite
-        - gl2ps
         - pugixml
         - tbb-devel
         - numpy
-        - wslink
 
       run_constrained:
         # Paraview bundles its own VTK that has conflicting Python vtkmodules
@@ -163,7 +147,6 @@ outputs:
         - vtk.vtkCommonCore
         - vtk.vtkFiltersCore
         - vtk.vtkFiltersGeneric
-        - vtk.vtkGeovisCore
         - vtk.vtkFiltersHybrid
         - vtk.vtkIOCore
         - vtk.vtkImagingCore
@@ -179,7 +162,6 @@ outputs:
         - vtkmodules.vtkCommonCore
         - vtkmodules.vtkFiltersCore
         - vtkmodules.vtkFiltersGeneric
-        - vtkmodules.vtkGeovisCore
         - vtkmodules.vtkFiltersHybrid
         - vtkmodules.vtkIOCore
         - vtkmodules.vtkImagingCore
@@ -188,9 +170,6 @@ outputs:
         - vtkmodules.vtkViewsCore
         - vtkmodules.vtkRenderingVolume
         - vtkmodules.vtkInteractionWidgets
-        - vtkmodules.vtkWebCore
-        - vtkmodules.web
-        - vtkmodules.web.utils
 
       requires:
         - pip
@@ -198,49 +177,6 @@ outputs:
 
       commands:
         - pip check
-
-  - name: vtk-io-ffmpeg
-    build:
-      string: {{ build_string }}
-      script: ${RECIPE_DIR}/build-io-ffmpeg.sh  # [not win]
-      skip: true  # [win]
-      run_exports:
-        - {{ pin_subpackage('vtk-io-ffmpeg', max_pin='x.x.x') }}
-    requirements:
-      build: []
-      host:
-          # We use ffmpeg here in the host section so that conda build
-          # uses the global pinnings and ensures ffmpeg compatibility.
-          - ffmpeg
-      run:
-        - {{ pin_subpackage("vtk-base", exact=True) }}
-        - ffmpeg
-    test:
-      requires:
-        - pip
-        - setuptools
-      imports:
-        - vtk.vtkIOFFMPEG
-
-  - name: vtk
-    build:
-      string: {{ build_string }}
-      run_exports:
-        - {{ pin_subpackage('vtk-base', max_pin='x.x.x') }}
-    requirements:
-      build: []
-      run:
-        - {{ pin_subpackage("vtk-base", exact=True) }}
-        - {{ pin_subpackage("vtk-io-ffmpeg", exact=True) }}  # [not win]
-    test:
-      requires:
-        - pip
-        - setuptools
-      imports:
-        - vtk
-        - vtk.vtkIOFFMPEG  # [not win]
-      commands:
-        - python test_vtk.py
 
 about:
   home: http://www.vtk.org/
