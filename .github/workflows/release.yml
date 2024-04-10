@@ -16,10 +16,13 @@ jobs:
           # For now just build a subset and see how upstreaming goes.
           - os: macos-13
             config: osx_64_build_variantosmesapython3.11.____cpython
+            output: miniforge3/conda-bld/
           - os: macos-14
             config: osx_arm64_build_variantosmesapython3.11.____cpython
+            output: miniforge3/conda-bld/
           - os: ubuntu-22.04
             config: linux_64_build_variantosmesapython3.11.____cpython
+            output: build_artifacts/
 
     steps:
       - uses: actions/checkout@v4
@@ -36,7 +39,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: packages-${{ matrix.os }}
-          path: miniforge3/conda-bld/
+          path: ${{ matrix.output }}
 
   pages:
     needs: [build]
