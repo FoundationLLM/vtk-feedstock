@@ -40,7 +40,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: packages-${{ matrix.os }}
-          path: ${{ matrix.output }}
+          path: |
+            ${{ matrix.output }}
+            !${{ matrix.output }}/*_cache/**/*
+            !${{ matrix.output }}/vtk_*/**/*
 
   pages:
     needs: [build]
