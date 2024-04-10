@@ -34,6 +34,7 @@ jobs:
         shell: bash
         env:
           OSX_SDK_DIR: ${{ github.workspace }}/SDKs
+          CI: true
 
       - name: upload-packages
         uses: actions/upload-artifact@v4
