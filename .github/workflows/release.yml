@@ -15,13 +15,13 @@ jobs:
         include:
           # For now just build a subset and see how upstreaming goes.
           - os: macos-13
-            config: osx_64_build_variantosmesapython3.11.____cpython
+            config: osx_64_build_variantosmesapython3.12.____cpython
             output: miniforge3/conda-bld/
           - os: macos-14
-            config: osx_arm64_build_variantosmesapython3.11.____cpython
+            config: osx_arm64_build_variantosmesapython3.12.____cpython
             output: miniforge3/conda-bld/
           - os: ubuntu-22.04
-            config: linux_64_build_variantosmesapython3.11.____cpython
+            config: linux_64_build_variantosmesapython3.12.____cpython
             output: build_artifacts/
 
     steps:
