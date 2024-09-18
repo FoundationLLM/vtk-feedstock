@@ -15,13 +15,20 @@ jobs:
         include:
           # For now just build a subset and see how upstreaming goes.
           - os: macos-13
+            engine: osmesa
             config: osx_64_build_variantosmesapython3.12.____cpython
             output: miniforge3/conda-bld/
           - os: macos-14
+            engine: osmesa
             config: osx_arm64_build_variantosmesapython3.12.____cpython
             output: miniforge3/conda-bld/
           - os: ubuntu-22.04
+            engine: osmesa
             config: linux_64_build_variantosmesapython3.12.____cpython
+            output: build_artifacts/
+          - os: ubuntu-22.04
+            engine: egl
+            config: linux_64_build_varianteglpython3.12.____cpython
             output: build_artifacts/
 
     steps:
@@ -39,7 +46,7 @@ jobs:
       - name: upload-packages
         uses: actions/upload-artifact@v4
         with:
-          name: packages-${{ matrix.os }}
+          name: packages-${{ matrix.os }}-${{ matrix.engine }}
           path: |
             ${{ matrix.output }}
             !${{ matrix.output }}/*_cache/**/*
