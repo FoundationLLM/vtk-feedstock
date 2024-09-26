@@ -22,6 +22,14 @@ jobs:
             engine: osmesa
             config: osx_arm64_build_variantosmesapython3.12.____cpython
             output: miniforge3/conda-bld/
+          - os: macos-13
+            engine: egl
+            config: osx_64_build_varianteglpython3.12.____cpython
+            output: miniforge3/conda-bld/
+          - os: macos-14
+            engine: egl
+            config: osx_arm64_build_varianteglpython3.12.____cpython
+            output: miniforge3/conda-bld/
           - os: ubuntu-22.04
             engine: osmesa
             config: linux_64_build_variantosmesapython3.12.____cpython
