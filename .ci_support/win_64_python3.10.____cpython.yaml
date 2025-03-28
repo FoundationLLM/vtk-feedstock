@@ -8,42 +8,36 @@ cxx_compiler:
 - vs2019
 expat:
 - '2'
-ffmpeg:
-- '6'
 freetype:
 - '2'
 glew:
 - '2.1'
-hdf5:
-- 1.14.3
 jsoncpp:
-- 1.9.5
+- 1.9.6
+libboost_headers:
+- '1.84'
 libjpeg_turbo:
 - '3'
-libnetcdf:
-- 4.9.2
 libpng:
 - '1.6'
 libtiff:
-- '4.6'
+- '4.7'
 libxml2:
 - '2'
 lz4_c:
-- 1.9.3
+- '1.10'
 pin_run_as_build:
   python:
     min_pin: x.x
     max_pin: x.x
 proj:
-- 9.3.1
+- '9.5'
 pugixml:
-- '1.14'
+- '1.15'
 python:
 - 3.10.* *_cpython
 qt_main:
 - '5.15'
-sqlite:
-- '3'
 target_platform:
 - win-64
 tbb:
@@ -51,6 +45,6 @@ tbb:
 tbb_devel:
 - '2021'
 vtk:
-- 9.2.6
+- 9.3.1
 zlib:
-- '1.2'
+- '1'

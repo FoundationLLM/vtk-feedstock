@@ -20,10 +20,6 @@ jobs:
         CONFIG: linux_64_build_varianteglpython3.12.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_build_varianteglpython3.8.____cpython:
-        CONFIG: linux_64_build_varianteglpython3.8.____cpython
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_64_build_varianteglpython3.9.____cpython:
         CONFIG: linux_64_build_varianteglpython3.9.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -38,10 +34,6 @@ jobs:
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_64_build_variantosmesapython3.12.____cpython:
         CONFIG: linux_64_build_variantosmesapython3.12.____cpython
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_build_variantosmesapython3.8.____cpython:
-        CONFIG: linux_64_build_variantosmesapython3.8.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_64_build_variantosmesapython3.9.____cpython:
@@ -60,10 +52,6 @@ jobs:
         CONFIG: linux_64_build_variantqtpython3.12.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_build_variantqtpython3.8.____cpython:
-        CONFIG: linux_64_build_variantqtpython3.8.____cpython
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_64_build_variantqtpython3.9.____cpython:
         CONFIG: linux_64_build_variantqtpython3.9.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -71,84 +59,67 @@ jobs:
       linux_aarch64_build_variantosmesapython3.10.____cpython:
         CONFIG: linux_aarch64_build_variantosmesapython3.10.____cpython
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_aarch64_build_variantosmesapython3.11.____cpython:
         CONFIG: linux_aarch64_build_variantosmesapython3.11.____cpython
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_aarch64_build_variantosmesapython3.12.____cpython:
         CONFIG: linux_aarch64_build_variantosmesapython3.12.____cpython
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_build_variantosmesapython3.8.____cpython:
-        CONFIG: linux_aarch64_build_variantosmesapython3.8.____cpython
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_aarch64_build_variantosmesapython3.9.____cpython:
         CONFIG: linux_aarch64_build_variantosmesapython3.9.____cpython
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_aarch64_build_variantqtpython3.10.____cpython:
         CONFIG: linux_aarch64_build_variantqtpython3.10.____cpython
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_aarch64_build_variantqtpython3.11.____cpython:
         CONFIG: linux_aarch64_build_variantqtpython3.11.____cpython
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_aarch64_build_variantqtpython3.12.____cpython:
         CONFIG: linux_aarch64_build_variantqtpython3.12.____cpython
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_build_variantqtpython3.8.____cpython:
-        CONFIG: linux_aarch64_build_variantqtpython3.8.____cpython
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_aarch64_build_variantqtpython3.9.____cpython:
         CONFIG: linux_aarch64_build_variantqtpython3.9.____cpython
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_ppc64le_build_variantosmesapython3.10.____cpython:
         CONFIG: linux_ppc64le_build_variantosmesapython3.10.____cpython
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_ppc64le_build_variantosmesapython3.11.____cpython:
         CONFIG: linux_ppc64le_build_variantosmesapython3.11.____cpython
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_ppc64le_build_variantosmesapython3.12.____cpython:
         CONFIG: linux_ppc64le_build_variantosmesapython3.12.____cpython
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_build_variantosmesapython3.8.____cpython:
-        CONFIG: linux_ppc64le_build_variantosmesapython3.8.____cpython
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_ppc64le_build_variantosmesapython3.9.____cpython:
         CONFIG: linux_ppc64le_build_variantosmesapython3.9.____cpython
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_ppc64le_build_variantqtpython3.10.____cpython:
         CONFIG: linux_ppc64le_build_variantqtpython3.10.____cpython
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_ppc64le_build_variantqtpython3.11.____cpython:
         CONFIG: linux_ppc64le_build_variantqtpython3.11.____cpython
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_ppc64le_build_variantqtpython3.12.____cpython:
         CONFIG: linux_ppc64le_build_variantqtpython3.12.____cpython
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_build_variantqtpython3.8.____cpython:
-        CONFIG: linux_ppc64le_build_variantqtpython3.8.____cpython
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_ppc64le_build_variantqtpython3.9.____cpython:
         CONFIG: linux_ppc64le_build_variantqtpython3.9.____cpython
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-    maxParallel: 29
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
   timeoutInMinutes: 360
   variables: {}
 
