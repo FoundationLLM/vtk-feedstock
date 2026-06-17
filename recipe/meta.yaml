@@ -79,7 +79,7 @@ outputs:
         - expat
         - tbb
         - tbb-devel
-        - mesalib >=21.0  # [build_variant == "osmesa"]
+        - "mesalib >=21.0,<26"  # [build_variant == "osmesa"]  # mesalib 26+ dropped libOSMesa on osx-arm64
         - lz4-c
         - xorg-libxt  # [linux]
         # These packages are not CDT to help with compat with other builds
@@ -120,7 +120,7 @@ outputs:
         - jsoncpp
         - expat
         - tbb
-        - mesalib >=21.0  # [build_variant == "osmesa"]
+        - "mesalib >=21.0,<26"  # [build_variant == "osmesa"]  # mesalib 26+ dropped libOSMesa on osx-arm64
         - lz4-c
         - xorg-libxt  # [linux]
         - tk  # [not win and (build_variant == "qt")]
